@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b41g33w3c8j4k"
+path="res://.godot/imported/InfraredFurtive.obj-75e51ee96cdedbcda0d01cac339fdeb0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/InfraredFurtive.obj-75e51ee96cdedbcda0d01cac339fdeb0.mesh"]
+
+source_file="res://assets/models/Ships/Furtive/InfraredFurtive.obj"
+dest_files=["res://.godot/imported/InfraredFurtive.obj-75e51ee96cdedbcda0d01cac339fdeb0.mesh", "res://.godot/imported/InfraredFurtive.obj-75e51ee96cdedbcda0d01cac339fdeb0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

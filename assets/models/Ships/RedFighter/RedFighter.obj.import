@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cokfukykge7lv"
+path="res://.godot/imported/RedFighter.obj-7c2824e9b3102a5db9d8108d08ad0d02.mesh"
+
+[deps]
+
+files=["res://.godot/imported/RedFighter.obj-7c2824e9b3102a5db9d8108d08ad0d02.mesh"]
+
+source_file="res://assets/models/Ships/RedFighter/RedFighter.obj"
+dest_files=["res://.godot/imported/RedFighter.obj-7c2824e9b3102a5db9d8108d08ad0d02.mesh", "res://.godot/imported/RedFighter.obj-7c2824e9b3102a5db9d8108d08ad0d02.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
