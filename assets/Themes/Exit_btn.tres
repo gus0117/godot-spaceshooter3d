@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dn0ejoqgd1t14"]
+
+[ext_resource type="FontFile" uid="uid://cm80vhivbgmav" path="res://assets/fonts/advanced_pixel-7.ttf" id="1_tnu52"]
+
+[resource]
+Button/colors/font_hover_color = Color(0.823529, 0.823529, 0, 1)
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_tnu52")

@@ -1,4 +1,83 @@
-[gd_scene format=3 uid="uid://bxepgbmjjdspl"]
+[gd_scene load_steps=11 format=3 uid="uid://bxepgbmjjdspl"]
+
+[ext_resource type="Script" path="res://assets/scripts/menu.gd" id="1_8gaxb"]
+[ext_resource type="Texture2D" uid="uid://dpjhnubjomt13" path="res://assets/images/menu-bg.jpg" id="1_ef72m"]
+[ext_resource type="FontFile" uid="uid://cm80vhivbgmav" path="res://assets/fonts/advanced_pixel-7.ttf" id="2_np7u1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l5hkf"]
+font = ExtResource("2_np7u1")
+font_size = 40
+font_color = Color(1, 0.364706, 0, 1)
+outline_size = 2
+shadow_size = 6
+shadow_color = Color(1, 1, 0.231373, 0.0901961)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y8pi0"]
+line_spacing = 4.0
+font = ExtResource("2_np7u1")
+font_size = 67
+font_color = Color(1, 0.364706, 0, 1)
+outline_size = 2
+shadow_size = 6
+shadow_color = Color(0.596078, 0.592157, 0, 0.552941)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b73hm"]
+font = ExtResource("2_np7u1")
+font_size = 20
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_ilnon"]
+resource_name = "fadein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1, 1.0001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dnuo3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y0hpe"]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_11gpv"]
+_data = {
+"RESET": SubResource("Animation_dnuo3"),
+"fadein": SubResource("Animation_ilnon"),
+"fadeout": SubResource("Animation_y0hpe")
+}
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -7,3 +86,91 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8gaxb")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -19.0
+offset_right = 13.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ef72m")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 145
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Saturn lab games"
+label_settings = SubResource("LabelSettings_l5hkf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Space Shooter 3D"
+label_settings = SubResource("LabelSettings_y8pi0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="Footer" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Desarrollado por Saturn lab games 2024 - Basado en el tutorial de Ledeeo"
+label_settings = SubResource("LabelSettings_b73hm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fade" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fade"]
+libraries = {
+"": SubResource("AnimationLibrary_11gpv")
+}
+autoplay = "fadein"
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="animation_finished" from="Fade/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
