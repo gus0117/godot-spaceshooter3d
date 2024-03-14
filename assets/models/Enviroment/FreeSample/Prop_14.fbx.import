@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Prop_14.fbx-6b78da57ec4c5d03791ea086870bbb22.
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="Node3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
@@ -29,6 +29,13 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"M_Props": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/models/Enviroment/Materials/props_material.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

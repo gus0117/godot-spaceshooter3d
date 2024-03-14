@@ -33,7 +33,7 @@ _subresources={
 "materials": {
 "M_Props": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/models/Enviroment/Materials/Enviroment_material.tres"
+"use_external/path": "res://assets/models/Enviroment/Materials/props_material.tres"
 }
 },
 "nodes": {

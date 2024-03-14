@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cr1ebcrlnh6hu"]
+
+[ext_resource type="Texture2D" uid="uid://mcdb5eq2fyvt" path="res://assets/models/Enviroment/Textures/Bakes/T_Vehicles_diffuse.png" id="1_q5h2i"]
+[ext_resource type="Texture2D" uid="uid://clcn7pir12vrm" path="res://assets/models/Enviroment/Textures/Bakes/T_Vehicles_emissive.png" id="2_6a6ot"]
+
+[resource]
+albedo_texture = ExtResource("1_q5h2i")
+emission_enabled = true
+emission_texture = ExtResource("2_6a6ot")
