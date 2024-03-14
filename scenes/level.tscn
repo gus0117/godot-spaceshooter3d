@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://bhttlpn4qg4j4"]
+[gd_scene load_steps=2 format=3 uid="uid://chwu62cv4l3eq"]
+
+[ext_resource type="PackedScene" uid="uid://beclkmaox0nf5" path="res://scenes/chunk.tscn" id="1_ellgb"]
 
 [node name="Level" type="Node3D"]
+
+[node name="Chunk" parent="." instance=ExtResource("1_ellgb")]
