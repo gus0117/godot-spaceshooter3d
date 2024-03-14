@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://hiad4eq87hp2"]
+[gd_scene load_steps=7 format=3 uid="uid://sw2lm6jkqb3f"]
 
 [ext_resource type="Script" path="res://assets/scripts/Player.gd" id="1_75t8f"]
 [ext_resource type="ArrayMesh" uid="uid://cokfukykge7lv" path="res://assets/models/Ships/RedFighter/RedFighter.obj" id="2_hjpya"]
@@ -15,7 +15,7 @@ size = Vector3(0.3, 0.3, 0.3)
 collision_mask = 6
 script = ExtResource("1_75t8f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Spaceship" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, -0.475035, -0.485027, 0.471891)
 mesh = ExtResource("2_hjpya")
 surface_material_override/0 = ExtResource("3_0ncw2")
@@ -41,7 +41,7 @@ texture = ExtResource("4_x1511")
 
 [node name="Sound" type="AudioStreamPlayer" parent="Settings/Crossair"]
 
-[node name="Marker3D" type="Marker3D" parent="Settings"]
+[node name="ShootSpawner" type="Marker3D" parent="Settings"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.47993)
 
 [node name="AudioShoot" type="AudioStreamPlayer3D" parent="Settings"]

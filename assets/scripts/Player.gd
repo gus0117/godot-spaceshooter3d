@@ -1,39 +1,55 @@
 extends CharacterBody3D
+class_name Player
+
+var shot : PackedScene = preload("res://scenes/shot.tscn")
+var can_shot : bool = false
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 2.5
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+func _process(delta):
+	motion_ctrl()
+	anim_ctrl()
 
+func _input(event):
+	if can_shot and event.is_action_pressed("ui_shot"):
+		shoot_ctrl()
 
-func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+func tween_ctrl(node, property: String, final_val, duration: float) -> void:
+	var tween : Tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(node, property, final_val, duration)
+	pass
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+func shoot_ctrl() -> void:
+	#$Settings/AudioShoot.play()
+	var shot_instance : Area3D = shot.instantiate()
+	get_tree().call_group("Level", "add_child", shot_instance)
+	shot_instance.set_global_position($Settings/ShootSpawner.global_position())
+	pass
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+func motion_ctrl() -> void:
+	velocity.x = GLOBAL.get_axis().x * SPEED
+	velocity.z = GLOBAL.get_axis().y * SPEED
 	move_and_slide()
 
+func anim_ctrl() -> void:
+	if GLOBAL.get_axis().x > 0:
+		tween_ctrl($Spaceship, "rotation", Vector3($Spaceship.rotation.x, $Spaceship.rotation.y, 0.6), 0.6)
+	elif GLOBAL.get_axis().x < 0:
+		tween_ctrl($Spaceship, "rotation", Vector3($Spaceship.rotation.x, $Spaceship.rotation.y, -0.6), 0.6)
+	else:
+		tween_ctrl($Spaceship, "rotation", Vector3.ZERO, 0.5)
 
 func _on_crossair_area_entered(area):
-	pass # Replace with function body.
+	if area.is_in_group("Enemy"):
+		can_shot = true
+		tween_ctrl($Settings/Crossair/Sprite3D, "scale", Vector3(0.6, 0.6, 0.6), 0.2)
+		tween_ctrl($Settings/Crossair/Sprite3D, "modulate", Color(0.55, 0.76, 0.29, 1.0), 0.1)
+		#$Settings/Crossair/Sound.play()
 
 
 func _on_crossair_area_exited(area):
-	pass # Replace with function body.
+	if area.is_in_group("Enemy"):
+		can_shot = false
+		tween_ctrl($Settings/Crossair/Sprite3D, "scale", Vector3(0.3, 0.3, 0.3), 0.2)
+		tween_ctrl($Settings/Crossair/Sprite3D, "modulate", Color(1.0, 1.0, 1.0, 1.0), 0.1)
