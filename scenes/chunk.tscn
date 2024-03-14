@@ -1,5 +1,10 @@
-[gd_scene format=3 uid="uid://d2s6gk68i4nlg"]
+[gd_scene load_steps=2 format=3 uid="uid://d2s6gk68i4nlg"]
+
+[ext_resource type="MeshLibrary" uid="uid://dybcylbwrkioa" path="res://assets/models/Meshlib/meshlib_env.tres" id="1_bhmh1"]
 
 [node name="Chunk" type="Node3D"]
 
 [node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_bhmh1")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
