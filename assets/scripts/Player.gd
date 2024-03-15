@@ -24,12 +24,12 @@ func shoot_ctrl() -> void:
 	#$Settings/AudioShoot.play()
 	var shot_instance : Area3D = shot.instantiate()
 	get_tree().call_group("Level", "add_child", shot_instance)
-	shot_instance.set_global_position($Settings/ShootSpawner.global_position())
+	shot_instance.set_global_position($Settings/ShootSpawner.get_global_position())
 	pass
 
 func motion_ctrl() -> void:
 	velocity.x = GLOBAL.get_axis().x * SPEED
-	velocity.z = GLOBAL.get_axis().y * SPEED
+	velocity.z = GLOBAL.get_axis().y * -SPEED
 	move_and_slide()
 
 func anim_ctrl() -> void:

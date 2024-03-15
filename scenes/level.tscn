@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://chwu62cv4l3eq"]
+[gd_scene load_steps=11 format=3 uid="uid://chwu62cv4l3eq"]
 
-[ext_resource type="PackedScene" uid="uid://kgmopkdlgtwe" path="res://scenes/gui.tscn" id="1_6lccy"]
+[ext_resource type="PackedScene" path="res://scenes/gui.tscn" id="1_6lccy"]
 [ext_resource type="PackedScene" uid="uid://beclkmaox0nf5" path="res://scenes/chunk.tscn" id="1_ellgb"]
+[ext_resource type="Script" path="res://assets/scripts/level.gd" id="1_kd82h"]
 [ext_resource type="AudioStream" uid="uid://b3em1fhn3ibey" path="res://assets/audio/DavidKBD - Cosmic Pack 01 - Cosmic Journey-full.ogg" id="2_n0bwl"]
+[ext_resource type="ArrayOccluder3D" uid="uid://cj5u0p4m4l0hp" path="res://scenes/level.occ" id="3_77bvl"]
 [ext_resource type="PackedScene" uid="uid://sw2lm6jkqb3f" path="res://scenes/player.tscn" id="4_14672"]
 
 [sub_resource type="Environment" id="Environment_15wmi"]
@@ -21,10 +23,17 @@ dof_blur_far_distance = 4.0
 dof_blur_far_transition = 24.0
 
 [sub_resource type="Curve3D" id="Curve3D_gi3hx"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.51517, 0, -3.19199, 0, 0, 0, 0, 0, 0, 6.98905, 0, -3.4098, 0, 0, 0, 0, 0, 0, 6.80754, 0, -0.541967, 0, 0, 0, 0, 0, 0, -6.47887, 0, -0.723476, 0, 0, 0, 0, 0, 0, -6.51517, 0, -3.19199),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qo5gy"]
+size = Vector3(1, 4.45813, 10.5863)
 
 [node name="Level" type="Node3D" groups=["Level"]]
+script = ExtResource("1_kd82h")
 
 [node name="GUI" parent="." instance=ExtResource("1_6lccy")]
 
@@ -36,6 +45,7 @@ current = true
 far = 128.0
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("3_77bvl")
 bake_mask = 4294966276
 
 [node name="Settings" type="Node" parent="."]
@@ -56,14 +66,40 @@ curve = SubResource("Curve3D_gi3hx")
 [node name="PathFollow3D" type="PathFollow3D" parent="Settings/Path3D"]
 
 [node name="Timer" type="Timer" parent="Settings"]
+wait_time = 1.1
 
 [node name="Limits" type="Node" parent="Settings"]
 
 [node name="Front" type="StaticBody3D" parent="Settings/Limits"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.22791)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2.5, -2.25)
 collision_layer = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Settings/Limits/Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72906, 0.0216827)
+shape = SubResource("BoxShape3D_qo5gy")
+
+[node name="Left" type="StaticBody3D" parent="Settings/Limits"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.75824, 2.5, 2.554)
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Settings/Limits/Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72906, 0.0216827)
+shape = SubResource("BoxShape3D_qo5gy")
+
+[node name="Right" type="StaticBody3D" parent="Settings/Limits"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.804, 2.5, 2.554)
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Settings/Limits/Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72906, 0.0216827)
+shape = SubResource("BoxShape3D_qo5gy")
+
+[node name="Back" type="StaticBody3D" parent="Settings/Limits"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0121841, 2.5, 7.30951)
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Settings/Limits/Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72906, 0.0216827)
 shape = SubResource("BoxShape3D_qo5gy")
 
 [node name="Chunks" type="Node3D" parent="."]
@@ -82,3 +118,5 @@ transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0, 
 
 [node name="Player" parent="." instance=ExtResource("4_14672")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5, 0)
+
+[connection signal="timeout" from="Settings/Timer" to="." method="_on_timer_timeout"]

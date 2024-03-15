@@ -1,8 +1,8 @@
 [gd_scene load_steps=32 format=3 uid="uid://dp4weycgomxkt"]
 
 [ext_resource type="Material" uid="uid://dngssdogkhmnp" path="res://assets/models/Enviroment/Materials/Enviroment_material.tres" id="1_808pp"]
-[ext_resource type="Material" uid="uid://ufqngd3w2r6d" path="res://assets/models/Enviroment/Materials/props_material.tres" id="2_mv1pp"]
-[ext_resource type="Material" uid="uid://cr1ebcrlnh6hu" path="res://assets/models/Enviroment/Materials/vehicles_material.tres" id="3_pbkaa"]
+[ext_resource type="Material" path="res://assets/models/Enviroment/Materials/props_material.tres" id="2_mv1pp"]
+[ext_resource type="Material" path="res://assets/models/Enviroment/Materials/vehicles_material.tres" id="3_pbkaa"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7p6q6"]
 _surfaces = [{

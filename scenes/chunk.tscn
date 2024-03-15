@@ -2,8 +2,8 @@
 
 [ext_resource type="Material" uid="uid://dngssdogkhmnp" path="res://assets/models/Enviroment/Materials/Enviroment_material.tres" id="1_no13x"]
 [ext_resource type="Script" path="res://assets/scripts/chunk.gd" id="1_v0vq2"]
-[ext_resource type="Material" uid="uid://ufqngd3w2r6d" path="res://assets/models/Enviroment/Materials/props_material.tres" id="2_82r4n"]
-[ext_resource type="Material" uid="uid://cr1ebcrlnh6hu" path="res://assets/models/Enviroment/Materials/vehicles_material.tres" id="3_1wkkg"]
+[ext_resource type="Material" path="res://assets/models/Enviroment/Materials/props_material.tres" id="2_82r4n"]
+[ext_resource type="Material" path="res://assets/models/Enviroment/Materials/vehicles_material.tres" id="3_1wkkg"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7p6q6"]
 _surfaces = [{
