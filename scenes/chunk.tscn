@@ -458,178 +458,178 @@ script = ExtResource("1_v0vq2")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111755, 1.07828, -0.897612)
-aabb = AABB(-5, -1, -5, 15, 2, 11.607)
+aabb = AABB(-5.6, -1, -4, 11.5, 2, 15.5)
 
 [node name="Crater_4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, -4.37114e-08, 4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 0, 0)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, 0.0197197, 0, -0.00250459)
 layers = 4
 mesh = SubResource("ArrayMesh_i7t7f")
 skeleton = NodePath("")
 
 [node name="Crater_6" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -2.5, 0, 2.5)
+transform = Transform3D(0.999996, -0.00296705, -1.29694e-10, 0, -4.37114e-08, 1, -0.00296705, -0.999996, -4.37112e-08, -2.48769, 0, -2.49508)
 layers = 4
 mesh = SubResource("ArrayMesh_i7t7f")
 skeleton = NodePath("")
 
 [node name="Crater_5" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -2.5)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, 2.51971, 0, -0.00992209)
 layers = 4
 mesh = SubResource("ArrayMesh_rcu3a")
 skeleton = NodePath("")
 
 [node name="GroundTile_4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 2.5)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, -2.48027, 0, 0.00491294)
 layers = 4
 mesh = SubResource("ArrayMesh_1t6u1")
 skeleton = NodePath("")
 
 [node name="GroundTile_6" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 5, 0, 5)
+transform = Transform3D(0.999996, -0.00296705, -1.29694e-10, 0, -4.37114e-08, 1, -0.00296705, -0.999996, -4.37112e-08, -4.96542, 0, 5.01231)
 layers = 4
 mesh = SubResource("ArrayMesh_1t6u1")
 skeleton = NodePath("")
 
 [node name="GroundTile_9" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -2.5, 0, -2.5)
+transform = Transform3D(-0.00296709, -0.999996, -4.37112e-08, 0, -4.37114e-08, 1, -0.999996, 0.00296709, 1.29696e-10, 2.51229, 0, -2.50991)
 layers = 4
 mesh = SubResource("ArrayMesh_1t6u1")
 skeleton = NodePath("")
 
 [node name="GroundTile_5" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 0, -2.5)
+transform = Transform3D(0.999996, -0.00296705, -1.29694e-10, 0, -4.37114e-08, 1, -0.00296705, -0.999996, -4.37112e-08, 2.51971, 0, -0.00992209)
 layers = 4
 mesh = SubResource("ArrayMesh_1t6u1")
 skeleton = NodePath("")
 
 [node name="GroundTile_7" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.5, 0, 2.5)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, -2.48769, 0, -2.49508)
 layers = 4
 mesh = SubResource("ArrayMesh_lghsd")
 skeleton = NodePath("")
 
 [node name="GroundTile_8" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.5, 0, -2.5)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, 2.52713, 0, 2.49007)
 layers = 4
 mesh = SubResource("ArrayMesh_lghsd")
 skeleton = NodePath("")
 
 [node name="GroundTile_008" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.5, 0, 5)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, -4.98768, 0, -2.48766)
 layers = 4
 mesh = SubResource("ArrayMesh_wk1wq")
 skeleton = NodePath("")
 
 [node name="GroundTile_009" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.5, 0, 0)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, 0.0271372, 0, 2.49748)
 layers = 4
 mesh = SubResource("ArrayMesh_wk1wq")
 skeleton = NodePath("")
 
 [node name="GroundTile_010" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, -2.5)
+transform = Transform3D(-0.00296697, -0.999996, -4.37112e-08, 0, -4.37114e-08, 1, -0.999996, 0.00296697, 1.29691e-10, 2.51971, 0, -0.00992209)
 layers = 4
 mesh = SubResource("ArrayMesh_5dnth")
 skeleton = NodePath("")
 
 [node name="GroundTile_012" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 5, 0, 2.5)
+transform = Transform3D(0.999996, -0.00296705, -1.29694e-10, 0, -4.37114e-08, 1, -0.00296705, -0.999996, -4.37112e-08, -2.46543, 0, 5.00489)
 layers = 4
 mesh = SubResource("ArrayMesh_5dnth")
 skeleton = NodePath("")
 
 [node name="GroundTile_013" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -2.5, 0, 2.5)
+transform = Transform3D(-0.00296709, -0.999996, -4.37112e-08, 0, -4.37114e-08, 1, -0.999996, 0.00296709, 1.29696e-10, -2.48769, 0, -2.49508)
 layers = 4
 mesh = SubResource("ArrayMesh_5dnth")
 skeleton = NodePath("")
 
 [node name="GroundTile_011" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 2.5, 0, 2.5)
+transform = Transform3D(-0.00296697, -0.999996, -4.37112e-08, 0, -4.37114e-08, 1, -0.999996, 0.00296697, 1.29691e-10, -2.47285, 0, 2.5049)
 layers = 4
 mesh = SubResource("ArrayMesh_5dnth")
 skeleton = NodePath("")
 
 [node name="GroundTile_014" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, -2.5, 0, -5)
+transform = Transform3D(-0.00296697, -0.999996, -4.37112e-08, 0, -4.37114e-08, 1, -0.999996, 0.00296697, 1.29691e-10, 5.01228, 0, -2.51733)
 layers = 4
 mesh = SubResource("ArrayMesh_5dnth")
 skeleton = NodePath("")
 
 [node name="Rock_3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 1.44921, 0, 5.1652)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, -5.14116, 0, 1.46202)
 layers = 4
 mesh = SubResource("ArrayMesh_kxxeg")
 skeleton = NodePath("")
 
 [node name="Rock_8" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -0.206662, 0, 5.1652)
+transform = Transform3D(-0.00296709, -0.999996, -4.37112e-08, 0, -4.37114e-08, 1, -0.999996, 0.00296709, 1.29696e-10, -5.14607, 0, -0.193841)
 layers = 4
 mesh = SubResource("ArrayMesh_kxxeg")
 skeleton = NodePath("")
 
 [node name="Rock_5" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 3.77562, 0, 5.1652)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, -5.13426, 0, 3.78842)
 layers = 4
 mesh = SubResource("ArrayMesh_kxxeg")
 skeleton = NodePath("")
 
 [node name="Rock_6" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -3.80743, 0, 5.1652)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, -5.15675, 0, -3.79459)
 layers = 4
 mesh = SubResource("ArrayMesh_kxxeg")
 skeleton = NodePath("")
 
 [node name="Rock_4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.50063, 0, 5.1652)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, -5.14991, 0, -1.4878)
 layers = 4
 mesh = SubResource("ArrayMesh_kxxeg")
 skeleton = NodePath("")
 
 [node name="Rock_9" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 1.44921, 0, -5.23923)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, 5.26323, 0, 1.43115)
 layers = 4
 mesh = SubResource("ArrayMesh_kxxeg")
 skeleton = NodePath("")
 
 [node name="Rock_10" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -0.206662, 0, -5.23923)
+transform = Transform3D(-0.00296709, -0.999996, -4.37112e-08, 0, -4.37114e-08, 1, -0.999996, 0.00296709, 1.29696e-10, 5.25831, 0, -0.22471)
 layers = 4
 mesh = SubResource("ArrayMesh_kxxeg")
 skeleton = NodePath("")
 
 [node name="Rock_11" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 3.77562, 0, -5.23923)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, 5.27013, 0, 3.75755)
 layers = 4
 mesh = SubResource("ArrayMesh_kxxeg")
 skeleton = NodePath("")
 
 [node name="Rock_13" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -3.80743, 0, -5.23923)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, 5.24763, 0, -3.82546)
 layers = 4
 mesh = SubResource("ArrayMesh_kxxeg")
 skeleton = NodePath("")
 
 [node name="Rock_14" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.50063, 0, -5.23923)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, 5.25447, 0, -1.51867)
 layers = 4
 mesh = SubResource("ArrayMesh_kxxeg")
 skeleton = NodePath("")
 
 [node name="Prop_15" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, -2.21515)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, 2.23486, 0, -0.00907692)
 layers = 4
 mesh = SubResource("ArrayMesh_dsaei")
 skeleton = NodePath("")
 
 [node name="Prop_14" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -2.02203, 0, 3.28105)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, -3.26732, 0, -2.01479)
 layers = 4
 mesh = SubResource("ArrayMesh_cipid")
 skeleton = NodePath("")
 
 [node name="BuildingBlock_2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 3.20694)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, -3.18721, 0, 0.00701043)
 layers = 4
 mesh = SubResource("ArrayMesh_1gtb7")
 skeleton = NodePath("")
@@ -641,19 +641,19 @@ mesh = SubResource("ArrayMesh_hlglj")
 skeleton = NodePath("")
 
 [node name="Rock_7" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -1.33878, 0, -2.94385)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, 2.95958, 0, -1.35001)
 layers = 4
 mesh = SubResource("ArrayMesh_cpo0k")
 skeleton = NodePath("")
 
 [node name="Rock_12" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -2.8504, 0, -2.67108)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, 2.68233, 0, -2.86082)
 layers = 4
 mesh = SubResource("ArrayMesh_a6uug")
 skeleton = NodePath("")
 
 [node name="Rock_15" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 3.0168, 0, -1.53577)
+transform = Transform3D(0.00296701, 0.999996, 4.37112e-08, 0, -4.37114e-08, 1, 0.999996, -0.00296701, -1.29692e-10, 1.56443, 0, 3.00973)
 layers = 4
 mesh = SubResource("ArrayMesh_rwwwk")
 skeleton = NodePath("")

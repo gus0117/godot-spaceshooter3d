@@ -1,7 +1,84 @@
-[gd_scene load_steps=2 format=3 uid="uid://chwu62cv4l3eq"]
+[gd_scene load_steps=9 format=3 uid="uid://chwu62cv4l3eq"]
 
+[ext_resource type="PackedScene" uid="uid://kgmopkdlgtwe" path="res://scenes/gui.tscn" id="1_6lccy"]
 [ext_resource type="PackedScene" uid="uid://beclkmaox0nf5" path="res://scenes/chunk.tscn" id="1_ellgb"]
+[ext_resource type="AudioStream" uid="uid://b3em1fhn3ibey" path="res://assets/audio/DavidKBD - Cosmic Pack 01 - Cosmic Journey-full.ogg" id="2_n0bwl"]
+[ext_resource type="PackedScene" uid="uid://sw2lm6jkqb3f" path="res://scenes/player.tscn" id="4_14672"]
 
-[node name="Level" type="Node3D"]
+[sub_resource type="Environment" id="Environment_15wmi"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.223529, 0.592157, 0.513726, 1)
+ssao_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.08
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+volumetric_fog_emission = Color(0.133333, 0.133333, 0.133333, 1)
 
-[node name="Chunk" parent="." instance=ExtResource("1_ellgb")]
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_n27es"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 4.0
+dof_blur_far_transition = 24.0
+
+[sub_resource type="Curve3D" id="Curve3D_gi3hx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qo5gy"]
+
+[node name="Level" type="Node3D" groups=["Level"]]
+
+[node name="GUI" parent="." instance=ExtResource("1_6lccy")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, 0, 8, 2.5)
+environment = SubResource("Environment_15wmi")
+attributes = SubResource("CameraAttributesPractical_n27es")
+current = true
+far = 128.0
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+bake_mask = 4294966276
+
+[node name="Settings" type="Node" parent="."]
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="Settings"]
+stream = ExtResource("2_n0bwl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Settings"]
+transform = Transform3D(1, 0, 0, 0, 0.349374, 0.936984, 0, -0.936984, 0.349374, 0, 4.82019, 0)
+light_energy = 0.4
+shadow_enabled = true
+sky_mode = 1
+
+[node name="Path3D" type="Path3D" parent="Settings"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -12)
+curve = SubResource("Curve3D_gi3hx")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Settings/Path3D"]
+
+[node name="Timer" type="Timer" parent="Settings"]
+
+[node name="Limits" type="Node" parent="Settings"]
+
+[node name="Front" type="StaticBody3D" parent="Settings/Limits"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.22791)
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Settings/Limits/Front"]
+shape = SubResource("BoxShape3D_qo5gy")
+
+[node name="Chunks" type="Node3D" parent="."]
+
+[node name="Chunk_1" parent="Chunks" instance=ExtResource("1_ellgb")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Chunk_2" parent="Chunks" instance=ExtResource("1_ellgb")]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0, -20)
+
+[node name="Chunk_3" parent="Chunks" instance=ExtResource("1_ellgb")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -40)
+
+[node name="Chunk_4" parent="Chunks" instance=ExtResource("1_ellgb")]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0, -60)
+
+[node name="Player" parent="." instance=ExtResource("4_14672")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5, 0)
