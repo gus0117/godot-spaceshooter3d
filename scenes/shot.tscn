@@ -1,8 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://dp6pw5gm5ipld"]
+[gd_scene load_steps=4 format=3 uid="uid://dp6pw5gm5ipld"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_mtpnb"]
+[ext_resource type="Texture2D" uid="uid://dfj8d1qoyxa3b" path="res://assets/sprites/15.png" id="1_d6ted"]
+[ext_resource type="Script" path="res://assets/scripts/shot.gd" id="1_qcncn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x536g"]
+size = Vector3(1.84705, 0.208557, 0.16333)
 
 [node name="Shot" type="Area3D"]
+collision_mask = 2
+script = ExtResource("1_qcncn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_mtpnb")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.184021, 0.028656, -0.00012207)
+shape = SubResource("BoxShape3D_x536g")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_d6ted")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+aabb = AABB(-0.740875, -0.102938, -0.0919335, 1.48175, 0.205876, 0.183867)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
