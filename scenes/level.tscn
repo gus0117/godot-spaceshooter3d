@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://chwu62cv4l3eq"]
 
-[ext_resource type="PackedScene" path="res://scenes/gui.tscn" id="1_6lccy"]
+[ext_resource type="PackedScene" uid="uid://kgmopkdlgtwe" path="res://scenes/gui.tscn" id="1_6lccy"]
 [ext_resource type="PackedScene" uid="uid://beclkmaox0nf5" path="res://scenes/chunk.tscn" id="1_ellgb"]
 [ext_resource type="Script" path="res://assets/scripts/level.gd" id="1_kd82h"]
 [ext_resource type="AudioStream" uid="uid://b3em1fhn3ibey" path="res://assets/audio/DavidKBD - Cosmic Pack 01 - Cosmic Journey-full.ogg" id="2_n0bwl"]
@@ -24,7 +24,7 @@ dof_blur_far_transition = 24.0
 
 [sub_resource type="Curve3D" id="Curve3D_gi3hx"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.51517, 0, -3.19199, 0, 0, 0, 0, 0, 0, 6.98905, 0, -3.4098, 0, 0, 0, 0, 0, 0, 6.80754, 0, -0.541967, 0, 0, 0, 0, 0, 0, -6.47887, 0, -0.723476, 0, 0, 0, 0, 0, 0, -6.51517, 0, -3.19199),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -3.70233, 0, -0.823402, 0, 0, 0, 0, 0, 0, 4.12894, 0, -0.770489, 0, 0, 0, 0, 0, 0, 4.10248, 0, 0.0761356, 0, 0, 0, 0, 0, 0, -3.67587, 0, -0.0296936, 0, 0, 0, 0, 0, 0, -3.70233, 0, -0.823402),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
@@ -64,6 +64,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -12)
 curve = SubResource("Curve3D_gi3hx")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Settings/Path3D"]
+transform = Transform3D(0.016127, 0, -0.99987, 0, 1, 0, 0.99987, 0, 0.016127, -6.51517, 0, -3.19199)
 
 [node name="Timer" type="Timer" parent="Settings"]
 wait_time = 1.1
