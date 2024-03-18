@@ -609,12 +609,12 @@ frame_progress = 0.730764
 aabb = AABB(-0.338379, -0.132423, -0.383727, 0.676758, 0.264847, 0.897336)
 
 [node name="Explosion" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.0480247, 0.426901, -0.0104297)
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, 0, 0)
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_2ejuy")
 animation = &"Exposion"
-frame = 22
-frame_progress = 0.337463
+frame = 32
+frame_progress = 1.0
 
 [node name="Audio" type="AudioStreamPlayer3D" parent="Explosion"]
 transform = Transform3D(0.333333, 0, 0, 0, 0.333333, 0, 0, 0, 0.333333, 0.0168495, 0, 0.157715)
